@@ -5,6 +5,12 @@
 **Application Under Test:** OpenMRS Reference Application Demo — https://demo.openmrs.org  
 **Stack:** Java 21 · Maven · JUnit 5 · Selenium WebDriver · REST Assured · Cucumber · JMeter
 
+**Team:**
+| Name | GitHub |
+|------|--------|
+| Rohit Bharti | [@rohitbharti6452](https://github.com/rohitbharti6452) |
+| Sai Ram Burri | [@Smarty6452](https://github.com/Smarty6452) |
+
 ---
 
 ## Project Overview
@@ -20,7 +26,7 @@ This capstone demonstrates end-to-end QA automation against a real, production-g
 
 | # | Component | Points | Status |
 |---|-----------|--------|--------|
-| 1 | Test Plan (Written Document) | 10 | ⬜ |
+| 1 | Test Plan (Written Document) | 10 | ✅ |
 | 2 | Test Cases (Written Document, min 15) | 15 | ⬜ |
 | 3 | Automated API Test Suite (min 8 tests) | 15 | ⬜ |
 | 4 | Automated UI Test Suite (min 5 tests) | 15 | ⬜ |
