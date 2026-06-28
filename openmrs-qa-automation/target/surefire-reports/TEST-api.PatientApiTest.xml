@@ -1,0 +1,1997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="api.PatientApiTest" time="3.122" tests="9" errors="0" skipped="3" failures="6">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/test-classes:/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/classes:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/Users/sairam/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar:/Users/sairam/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/sairam/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/sairam/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/sairam/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/sairam/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/sairam/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/sairam/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/sairam/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/sairam/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/sairam/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/sairam/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/sairam/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar:/Users/sairam/.m2/repository/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar:/Users/sairam/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar:/Users/sairam/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/Users/sairam/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-java/4.21.0/selenium-java-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-api/4.21.0/selenium-api-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.21.0/selenium-chrome-driver-4.21.0.jar:/Users/sairam/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.21.0/selenium-chromium-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-json/4.21.0/selenium-json-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.21.0/selenium-manager-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v123/4.21.0/selenium-devtools-v123-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.21.0/selenium-devtools-v124-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v125/4.21.0/selenium-devtools-v125-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.21.0/selenium-devtools-v85-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.21.0/selenium-edge-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.21.0/selenium-firefox-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-http/4.21.0/selenium-http-4.21.0.jar:/Users/sairam/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.21.0/selenium-ie-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.21.0/selenium-remote-driver-4.21.0.jar:/Users/sairam/.m2/repository/com/google/guava/guava/33.2.0-jre/guava-33.2.0-jre.jar:/Users/sairam/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/Users/sairam/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/sairam/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/sairam/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/sairam/.m2/repository/com/google/errorprone/error_prone_annotations/2.26.1/error_prone_annotations-2.26.1.jar:/Users/sairam/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-api/1.38.0/opentelemetry-api-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-context/1.38.0/opentelemetry-context-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.38.0/opentelemetry-exporter-logging-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.38.0/opentelemetry-sdk-common-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.38.0/opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.38.0/opentelemetry-sdk-extension-autoconfigure-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.38.0-alpha/opentelemetry-api-incubator-1.38.0-alpha.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.38.0/opentelemetry-sdk-trace-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.38.0/opentelemetry-sdk-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.38.0/opentelemetry-sdk-metrics-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.38.0/opentelemetry-sdk-logs-1.38.0.jar:/Users/sairam/.m2/repository/net/bytebuddy/byte-buddy/1.14.15/byte-buddy-1.14.15.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-os/4.21.0/selenium-os-4.21.0.jar:/Users/sairam/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.21.0/selenium-safari-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-support/4.21.0/selenium-support-4.21.0.jar:/Users/sairam/.m2/repository/io/github/bonigarcia/webdrivermanager/5.8.0/webdrivermanager-5.8.0.jar:/Users/sairam/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/sairam/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java/3.3.6/docker-java-3.3.6.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-core/3.3.6/docker-java-core-3.3.6.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/sairam/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/Users/sairam/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/Users/sairam/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/Users/sairam/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.76/bcpkix-jdk18on-1.76.jar:/Users/sairam/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.76/bcprov-jdk18on-1.76.jar:/Users/sairam/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.76/bcutil-jdk18on-1.76.jar:/Users/sairam/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.3.6/docker-java-transport-httpclient5-3.3.6.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/sairam/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/sairam/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/Users/sairam/.m2/repository/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar:/Users/sairam/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-java/7.18.0/cucumber-java-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-core/7.18.0/cucumber-core-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-gherkin/7.18.0/cucumber-gherkin-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.0/cucumber-gherkin-messages-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/Users/sairam/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/testng-xml-formatter/0.1.0/testng-xml-formatter-0.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/Users/sairam/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/datatable/7.18.0/datatable-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-plugin/7.18.0/cucumber-plugin-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/docstring/7.18.0/docstring-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/html-formatter/21.3.1/html-formatter-21.3.1.jar:/Users/sairam/.m2/repository/io/cucumber/junit-xml-formatter/0.4.0/junit-xml-formatter-0.4.0.jar:/Users/sairam/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/Users/sairam/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.18.0/cucumber-junit-platform-engine-7.18.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite/1.11.0/junit-platform-suite-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite-api/1.11.0/junit-platform-suite-api-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.11.0/junit-platform-suite-engine-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.11.0/junit-platform-suite-commons-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.0/junit-platform-launcher-1.11.0.jar:/Users/sairam/.m2/repository/com/aventstack/extentreports/5.1.1/extentreports-5.1.1.jar:/Users/sairam/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/Users/sairam/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/sairam/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/Users/sairam/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="America/Toronto"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/surefire/surefirebooter-20260628153017211_3.jar /Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/surefire 2026-06-28T15-30-17_182-jvmRun1 surefire-20260628153017211_1tmp surefire_0-20260628153017211_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="PatientApiTest"/>
+    <property name="surefire.test.class.path" value="/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/test-classes:/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/classes:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/Users/sairam/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/Users/sairam/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar:/Users/sairam/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/sairam/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/sairam/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/sairam/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/sairam/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/sairam/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/sairam/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/sairam/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/sairam/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/sairam/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/sairam/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/sairam/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar:/Users/sairam/.m2/repository/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar:/Users/sairam/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar:/Users/sairam/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/Users/sairam/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-java/4.21.0/selenium-java-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-api/4.21.0/selenium-api-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.21.0/selenium-chrome-driver-4.21.0.jar:/Users/sairam/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.21.0/selenium-chromium-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-json/4.21.0/selenium-json-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.21.0/selenium-manager-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v123/4.21.0/selenium-devtools-v123-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.21.0/selenium-devtools-v124-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v125/4.21.0/selenium-devtools-v125-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.21.0/selenium-devtools-v85-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.21.0/selenium-edge-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.21.0/selenium-firefox-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-http/4.21.0/selenium-http-4.21.0.jar:/Users/sairam/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.21.0/selenium-ie-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.21.0/selenium-remote-driver-4.21.0.jar:/Users/sairam/.m2/repository/com/google/guava/guava/33.2.0-jre/guava-33.2.0-jre.jar:/Users/sairam/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/Users/sairam/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/sairam/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/sairam/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/sairam/.m2/repository/com/google/errorprone/error_prone_annotations/2.26.1/error_prone_annotations-2.26.1.jar:/Users/sairam/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-api/1.38.0/opentelemetry-api-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-context/1.38.0/opentelemetry-context-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.38.0/opentelemetry-exporter-logging-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.38.0/opentelemetry-sdk-common-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.38.0/opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.38.0/opentelemetry-sdk-extension-autoconfigure-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.38.0-alpha/opentelemetry-api-incubator-1.38.0-alpha.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.38.0/opentelemetry-sdk-trace-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.38.0/opentelemetry-sdk-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.38.0/opentelemetry-sdk-metrics-1.38.0.jar:/Users/sairam/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.38.0/opentelemetry-sdk-logs-1.38.0.jar:/Users/sairam/.m2/repository/net/bytebuddy/byte-buddy/1.14.15/byte-buddy-1.14.15.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-os/4.21.0/selenium-os-4.21.0.jar:/Users/sairam/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.21.0/selenium-safari-driver-4.21.0.jar:/Users/sairam/.m2/repository/org/seleniumhq/selenium/selenium-support/4.21.0/selenium-support-4.21.0.jar:/Users/sairam/.m2/repository/io/github/bonigarcia/webdrivermanager/5.8.0/webdrivermanager-5.8.0.jar:/Users/sairam/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/sairam/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java/3.3.6/docker-java-3.3.6.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-core/3.3.6/docker-java-core-3.3.6.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/sairam/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/Users/sairam/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/Users/sairam/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/Users/sairam/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.76/bcpkix-jdk18on-1.76.jar:/Users/sairam/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.76/bcprov-jdk18on-1.76.jar:/Users/sairam/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.76/bcutil-jdk18on-1.76.jar:/Users/sairam/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.3.6/docker-java-transport-httpclient5-3.3.6.jar:/Users/sairam/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/sairam/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/sairam/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/Users/sairam/.m2/repository/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar:/Users/sairam/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/Users/sairam/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-java/7.18.0/cucumber-java-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-core/7.18.0/cucumber-core-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-gherkin/7.18.0/cucumber-gherkin-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.0/cucumber-gherkin-messages-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/Users/sairam/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/testng-xml-formatter/0.1.0/testng-xml-formatter-0.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/Users/sairam/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/Users/sairam/.m2/repository/io/cucumber/datatable/7.18.0/datatable-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-plugin/7.18.0/cucumber-plugin-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/docstring/7.18.0/docstring-7.18.0.jar:/Users/sairam/.m2/repository/io/cucumber/html-formatter/21.3.1/html-formatter-21.3.1.jar:/Users/sairam/.m2/repository/io/cucumber/junit-xml-formatter/0.4.0/junit-xml-formatter-0.4.0.jar:/Users/sairam/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/Users/sairam/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/sairam/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.18.0/cucumber-junit-platform-engine-7.18.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite/1.11.0/junit-platform-suite-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite-api/1.11.0/junit-platform-suite-api-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.11.0/junit-platform-suite-engine-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.11.0/junit-platform-suite-commons-1.11.0.jar:/Users/sairam/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.0/junit-platform-launcher-1.11.0.jar:/Users/sairam/.m2/repository/com/aventstack/extentreports/5.1.1/extentreports-5.1.1.jar:/Users/sairam/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/Users/sairam/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/sairam/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/Users/sairam/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/sairam"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation/target/surefire/surefirebooter-20260628153017211_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="25.0.1"/>
+    <property name="user.name" value="sairam"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.7.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/sairam/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/p7/1b3_dpg10dxc61qq23pcz6780000gn/T/"/>
+    <property name="java.version" value="25.0.1"/>
+    <property name="user.dir" value="/Users/sairam/Desktop/Cognizant/OMRS-Capstone/openmrs-qa-automation"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="headless" value=""/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/sairam/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="25.0.1"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="validCredentials_sessionReturnsAuthenticatedTrue" classname="api.PatientApiTest" time="1.039">
+    <failure message="1 expectation failed.&#10;XML path authenticated doesn&apos;t match.&#10;Expected: &lt;true&gt;&#10;  Actual: &lt;nullnullnullnullnull&#10;		:root {&#10;			--primary-color: #F26522;&#10;			--secondary-color: #5B57A6;&#10;			--background-color: #ecf3f7;&#10;			--success-color: #4CAF50;&#10;			--error-color: #f44336;&#10;			--warning-color: #ff9800;&#10;			--text-color: #333333;&#10;			--openmrs-logo-color: #246B63;&#10;		}&#10;&#10;        * {&#10;            margin: 0;&#10;            padding: 0;&#10;            box-sizing: border-box;&#10;            font-family: &quot;Roboto&quot;, sans-serif;&#10;        }&#10;&#10;        body {&#10;            background: var(--background-color);&#10;            color: var(--text-color);&#10;            padding: 20px;&#10;        }&#10;&#10;        .header-container {&#10;            max-width: 1200px;&#10;            margin: 0 auto;&#10;            padding: 20px;&#10;        }&#10;&#10;        .logo-section {&#10;            display: flex;&#10;            align-items: center;&#10;            gap: 20px;&#10;            margin-bottom: 30px;&#10;        }&#10;&#10;        .logo {&#10;            width: 100px;&#10;            height: 98px;&#10;            background-image: url(images/openmrs_logo_white.gif);&#10;            background-repeat: no-repeat;&#10;            background-size: contain;&#10;        }&#10;&#10;        .header-bar {&#10;            background: var(--openmrs-logo-color);&#10;            border-radius: 8px;&#10;            padding: 15px 25px;&#10;            text-align: center;&#10;            color: white;&#10;            font-size: 1.5rem;&#10;            font-weight: 500;&#10;            box-shadow: 0 3px 5px #246B63;&#10;            min-width: 930px;&#10;    		margin-right: 600px;&#10;        }&#10;&#10;        .message-container {&#10;            margin: 20px 0;&#10;        }&#10;&#10;        .openmrs_error {&#10;            padding: 15px;&#10;            background-color: #ffebee;&#10;            border-left: 4px solid var(--error-color);&#10;            border-radius: 8px;&#10;            margin-bottom: 10px;&#10;            box-shadow: 0 2px 4px rgba(0,0,0,0.05);&#10;            color: #c62828;&#10;        }&#10;&#10;        ul {&#10;            padding-left: 20px;&#10;        }&#10;&#10;        li {&#10;            margin-bottom: 8px;&#10;        }&#10;    null&#10;                The OpenMRS server is not able to start&#10;            OpenMRS Application Startup FailedThe following error occurred at startup:Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previouslyShow DetailsCopy Stacktraceorg.openmrs.module.ModuleException: Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously&#10;	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:44)&#10;	at org.openmrs.api.context.Daemon.lambda$runInDaemonThreadInternal$5(Daemon.java:489)&#10;	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)&#10;	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)&#10;	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)&#10;	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)&#10;	at java.base/java.lang.Thread.run(Thread.java:1583)&#10;Caused by: javax.servlet.ServletException: Should not be here because updates were run previously&#10;	at org.openmrs.web.Listener.startOpenmrs(Listener.java:350)&#10;	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:42)&#10;	... 6 more&#10;Caused by: org.openmrs.util.DatabaseUpdateException: There was an error while updating the database to the latest. file: org/openmrs/liquibase/updates/liquibase-update-to-latest-2.0.x.xml. Error: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:193)&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:153)&#10;	at org.openmrs.api.context.Context.checkForDatabaseUpdates(Context.java:1310)&#10;	at org.openmrs.api.context.Context.startup(Context.java:1013)&#10;	at org.openmrs.web.Listener.startOpenmrs(Listener.java:347)&#10;	... 7 more&#10;Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe&#10;	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155)&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:245)&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:189)&#10;	... 11 more&#10;Caused by: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe&#10;	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:882)&#10;	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133)&#10;	at liquibase.Scope.lambda$child$0(Scope.java:216)&#10;	at liquibase.Scope.child(Scope.java:225)&#10;	at liquibase.Scope.child(Scope.java:215)&#10;	at liquibase.Scope.child(Scope.java:194)&#10;	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122)&#10;	at liquibase.Scope.lambda$child$0(Scope.java:216)&#10;	at liquibase.Scope.child(Scope.java:225)&#10;	at liquibase.Scope.child(Scope.java:215)&#10;	at liquibase.Scope.child(Scope.java:194)&#10;	at liquibase.Scope.child(Scope.java:282)&#10;	at liquibase.Scope.child(Scope.java:286)&#10;	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91)&#10;	... 13 more&#10;Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase-update-to-latest.xml::20090402-1517::bwolfe:&#10;     Reason: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:845)&#10;	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:127)&#10;	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:71)&#10;	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:879)&#10;	... 26 more&#10;Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:176)&#10;	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:134)&#10;	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1198)&#10;	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:793)&#10;	... 29 more&#10;Caused by: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:118)&#10;	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:170)&#10;	... 32 more&#10;Caused by: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)&#10;	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)&#10;	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)&#10;	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)&#10;	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:113)&#10;	... 33 more&#10;&#10;    const toggleButton = document.getElementById(&apos;toggle-details&apos;);&#10;    const copyButton = document.getElementById(&apos;copy-stacktrace&apos;);&#10;    const stacktrace = document.getElementById(&apos;stacktrace&apos;);&#10;    const contentContainer = document.querySelector(&apos;.content-container&apos;);&#10;&#10;    toggleButton.addEventListener(&apos;click&apos;, () =&gt; {&#10;        stacktrace.classList.toggle(&apos;stacktrace-hidden&apos;);&#10;        toggleButton.textContent = stacktrace.classList.contains(&apos;stacktrace-hidden&apos;) ? &apos;Show Details&apos; : &apos;Hide Details&apos;;&#10;&#10;        contentContainer.style.height = &apos;auto&apos;;&#10;        requestAnimationFrame(() =&gt; {&#10;            contentContainer.style.height = contentContainer.scrollHeight + &quot;px&quot;;&#10;        });&#10;    });&#10;&#10;    copyButton.addEventListener(&apos;click&apos;, () =&gt; {&#10;        const text = stacktrace.textContent;&#10;        navigator.clipboard.writeText(text).then(() =&gt; {&#10;            copyButton.textContent = &apos;Copied to clipboard!&apos;;&#10;            setTimeout(() =&gt; {&#10;                copyButton.textContent = &apos;Copy Stacktrace&apos;;&#10;            }, 1500);&#10;        }).catch(() =&gt; {&#10;            alert(&apos;Failed to copy stacktrace.&apos;);&#10;        });&#10;    });&#10;&#10;    window.addEventListener(&apos;load&apos;, () =&gt; {&#10;        contentContainer.style.height = contentContainer.scrollHeight + &quot;px&quot;;&#10;    });&#10;&#10;    .content-container {&#10;        width: 100%;&#10;        max-width: 650px;&#10;        background: white;&#10;        border-radius: 12px;&#10;        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);&#10;        padding: 2rem;&#10;        overflow: hidden;&#10;    }&#10;&#10;    .form-container {&#10;        display: flex;&#10;        flex-direction: column;&#10;        gap: 1.5rem;&#10;    }&#10;&#10;    .form-title {&#10;        font-size: 1.5rem;&#10;        font-weight: 500;&#10;        color: var(--text-color);&#10;        text-align: center;&#10;        margin: 0 0 1rem;&#10;    }&#10;&#10;    .button-secondary {&#10;		background-color: var(--openmrs-logo-color);&#10;		color: white;&#10;		padding: 10px 20px;&#10;		border: none;&#10;		border-radius: 10px;&#10;		font-size: 1rem;&#10;		cursor: pointer;&#10;		margin: 0.5rem 0.5rem 0 0;&#10;	}&#10;&#10;    .error-box {&#10;        background: #fff0f0;&#10;        border: 1px solid #f5c2c7;&#10;        padding: 1rem;&#10;        border-radius: 8px;&#10;        color: red;&#10;        display: flex;&#10;        flex-direction: column;&#10;        gap: 1rem;&#10;        word-wrap: break-word;&#10;        overflow-wrap: break-word;&#10;        overflow: hidden;&#10;    }&#10;&#10;    .error-message {&#10;        font-weight: bold;&#10;        font-size: 1.1rem;&#10;    }&#10;&#10;    .error-description {&#10;        font-size: 1rem;&#10;    }&#10;&#10;    .stacktrace-hidden {&#10;        display: none;&#10;        max-height: 0;&#10;        padding: 0;&#10;        margin: 0;&#10;        border: none;&#10;        overflow: hidden;&#10;    }&#10;&#10;    #stacktrace {&#10;        background: #f8f9fa;&#10;        color: var(--text-color);&#10;        padding: 1rem;&#10;        border-radius: 8px;&#10;        overflow-x: auto;&#10;        font-size: 0.9rem;&#10;        max-height: 300px;&#10;        margin-top: 1rem;&#10;        border: 1px solid #ddd;&#10;    }&#10;nullWebsite|Wiki|Community&#10;            © OpenMRS. All rights reserved.&#10;        &#10;    body {&#10;        margin: 0;&#10;        padding: 0;&#10;        min-height: 100vh;&#10;        display: flex;&#10;        flex-direction: column;&#10;        padding-bottom: 120px;&#10;    }&#10;&#10;    .app-footer {&#10;        background-color: #f8f9fa;&#10;        border-top: 1px solid #e0e0e0;&#10;        padding: 1rem 0;&#10;        position: fixed;&#10;        bottom: 0;&#10;        width: 100%;&#10;        z-index: 100;&#10;        height: 100px;&#10;    }&#10;&#10;    .footer-content {&#10;        max-width: 1200px;&#10;        margin: 0 auto;&#10;        padding: 0 1.5rem;&#10;        display: flex;&#10;        flex-direction: column;&#10;        align-items: center;&#10;        gap: 0.75rem;&#10;    }&#10;&#10;    .footer-logo {&#10;        margin-bottom: 0.5rem;&#10;    }&#10;&#10;    .logo-image {&#10;        height: 30px;&#10;        width: auto;&#10;    }&#10;&#10;    .footer-links {&#10;        display: flex;&#10;        align-items: center;&#10;        gap: 1rem;&#10;    }&#10;&#10;    .footer-link {&#10;        color: var(--text-color);&#10;        text-decoration: none;&#10;        font-size: 0.9rem;&#10;        transition: color 0.2s ease;&#10;    }&#10;&#10;    .footer-link:hover {&#10;        color: var(--primary-color);&#10;    }&#10;&#10;    .footer-divider {&#10;        color: #ccc;&#10;    }&#10;&#10;    .footer-copyright {&#10;        font-size: 0.8rem;&#10;    }&#10;&#10;    .content-container {&#10;        max-width: 600px;&#10;        margin: 0 auto;&#10;        padding: 1.5rem;&#10;        background: white;&#10;        border-radius: 12px;&#10;        box-shadow: 0 2px 4px rgba(0,0,0,0.05);&#10;        margin-bottom: 20px;&#10;        overflow-y: auto;&#10;        max-height: calc(100vh - 180px);&#10;    }&#10;&#10;    @media (max-width: 768px) {&#10;        body {&#10;            padding-bottom: 140px;&#10;        }&#10;&#10;        .footer-content {&#10;            padding: 0 1rem;&#10;        }&#10;&#10;        .footer-links {&#10;            flex-wrap: wrap;&#10;            justify-content: center;&#10;        }&#10;&#10;        .content-container {&#10;            margin: 1rem;&#10;            max-height: calc(100vh - 200px);&#10;        }&#10;    }&#10;&gt;&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+XML path authenticated doesn't match.
+Expected: <true>
+  Actual: <nullnullnullnullnull
+		:root {
+			--primary-color: #F26522;
+			--secondary-color: #5B57A6;
+			--background-color: #ecf3f7;
+			--success-color: #4CAF50;
+			--error-color: #f44336;
+			--warning-color: #ff9800;
+			--text-color: #333333;
+			--openmrs-logo-color: #246B63;
+		}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 98px;
+            background-image: url(images/openmrs_logo_white.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .header-bar {
+            background: var(--openmrs-logo-color);
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+            box-shadow: 0 3px 5px #246B63;
+            min-width: 930px;
+    		margin-right: 600px;
+        }
+
+        .message-container {
+            margin: 20px 0;
+        }
+
+        .openmrs_error {
+            padding: 15px;
+            background-color: #ffebee;
+            border-left: 4px solid var(--error-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: #c62828;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    null
+                The OpenMRS server is not able to start
+            OpenMRS Application Startup FailedThe following error occurred at startup:Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previouslyShow DetailsCopy Stacktraceorg.openmrs.module.ModuleException: Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:44)
+	at org.openmrs.api.context.Daemon.lambda$runInDaemonThreadInternal$5(Daemon.java:489)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: javax.servlet.ServletException: Should not be here because updates were run previously
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:350)
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:42)
+	... 6 more
+Caused by: org.openmrs.util.DatabaseUpdateException: There was an error while updating the database to the latest. file: org/openmrs/liquibase/updates/liquibase-update-to-latest-2.0.x.xml. Error: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:193)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:153)
+	at org.openmrs.api.context.Context.checkForDatabaseUpdates(Context.java:1310)
+	at org.openmrs.api.context.Context.startup(Context.java:1013)
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:347)
+	... 7 more
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:245)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:189)
+	... 11 more
+Caused by: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:882)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.Scope.child(Scope.java:282)
+	at liquibase.Scope.child(Scope.java:286)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91)
+	... 13 more
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase-update-to-latest.xml::20090402-1517::bwolfe:
+     Reason: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:845)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:127)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:71)
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:879)
+	... 26 more
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:176)
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:134)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1198)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:793)
+	... 29 more
+Caused by: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:118)
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:170)
+	... 32 more
+Caused by: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:113)
+	... 33 more
+
+    const toggleButton = document.getElementById('toggle-details');
+    const copyButton = document.getElementById('copy-stacktrace');
+    const stacktrace = document.getElementById('stacktrace');
+    const contentContainer = document.querySelector('.content-container');
+
+    toggleButton.addEventListener('click', () => {
+        stacktrace.classList.toggle('stacktrace-hidden');
+        toggleButton.textContent = stacktrace.classList.contains('stacktrace-hidden') ? 'Show Details' : 'Hide Details';
+
+        contentContainer.style.height = 'auto';
+        requestAnimationFrame(() => {
+            contentContainer.style.height = contentContainer.scrollHeight + "px";
+        });
+    });
+
+    copyButton.addEventListener('click', () => {
+        const text = stacktrace.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            copyButton.textContent = 'Copied to clipboard!';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy Stacktrace';
+            }, 1500);
+        }).catch(() => {
+            alert('Failed to copy stacktrace.');
+        });
+    });
+
+    window.addEventListener('load', () => {
+        contentContainer.style.height = contentContainer.scrollHeight + "px";
+    });
+
+    .content-container {
+        width: 100%;
+        max-width: 650px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+        text-align: center;
+        margin: 0 0 1rem;
+    }
+
+    .button-secondary {
+		background-color: var(--openmrs-logo-color);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 10px;
+		font-size: 1rem;
+		cursor: pointer;
+		margin: 0.5rem 0.5rem 0 0;
+	}
+
+    .error-box {
+        background: #fff0f0;
+        border: 1px solid #f5c2c7;
+        padding: 1rem;
+        border-radius: 8px;
+        color: red;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .error-message {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .error-description {
+        font-size: 1rem;
+    }
+
+    .stacktrace-hidden {
+        display: none;
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    #stacktrace {
+        background: #f8f9fa;
+        color: var(--text-color);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 0.9rem;
+        max-height: 300px;
+        margin-top: 1rem;
+        border: 1px solid #ddd;
+    }
+nullWebsite|Wiki|Community
+            © OpenMRS. All rights reserved.
+        
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 120px;
+    }
+
+    .app-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        height: 100px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-image {
+        height: 30px;
+        width: auto;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+
+    .footer-divider {
+        color: #ccc;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        overflow-y: auto;
+        max-height: calc(100vh - 180px);
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-bottom: 140px;
+        }
+
+        .footer-content {
+            padding: 0 1rem;
+        }
+
+        .footer-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .content-container {
+            margin: 1rem;
+            max-height: calc(100vh - 200px);
+        }
+    }
+>
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
+	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at api.PatientApiTest.validCredentials_sessionReturnsAuthenticatedTrue(PatientApiTest.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[Request method:	GET
+Request URI:	https://demo.openmrs.org/openmrs/ws/rest/v1/session
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 28 Jun 2026 19:30:18 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' localhost localhost:*; base-uri 'self'; font-src 'self'; img-src 'self' data:; frame-ancestors 'self' ;
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=31536000
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="initfilter/scripts/jquery/jquery.min.js"/>
+    <script type="text/javascript" src="initfilter/scripts/initialsetup.js"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"/>
+    <style type="text/css" media="all">
+		:root {
+			--primary-color: #F26522;
+			--secondary-color: #5B57A6;
+			--background-color: #ecf3f7;
+			--success-color: #4CAF50;
+			--error-color: #f44336;
+			--warning-color: #ff9800;
+			--text-color: #333333;
+			--openmrs-logo-color: #246B63;
+		}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 98px;
+            background-image: url(images/openmrs_logo_white.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .header-bar {
+            background: var(--openmrs-logo-color);
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+            box-shadow: 0 3px 5px #246B63;
+            min-width: 930px;
+    		margin-right: 600px;
+        }
+
+        .message-container {
+            margin: 20px 0;
+        }
+
+        .openmrs_error {
+            padding: 15px;
+            background-color: #ffebee;
+            border-left: 4px solid var(--error-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: #c62828;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="images/openmrs_logo_white.gif" alt="OpenMRS White Logo"/>
+        <div class="header-bar">
+                The OpenMRS server is not able to start
+            </div>
+      </div>
+    </div>
+  </body>
+  <body>
+    <div class="content-container">
+      <div class="form-container">
+        <h2 class="form-title">OpenMRS Application Startup Failed</h2>
+        <div class="error-box">
+          <p class="error-message">
+            <strong>The following error occurred at startup:</strong>
+          </p>
+          <p class="error-description">Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously</p>
+          <button type="button" class="button-secondary" id="toggle-details">Show Details</button>
+          <button type="button" class="button-secondary" id="copy-stacktrace">Copy Stacktrace</button>
+          <pre class="stacktrace-hidden" id="stacktrace">org.openmrs.module.ModuleException: Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:44)
+	at org.openmrs.api.context.Daemon.lambda$runInDaemonThreadInternal$5(Daemon.java:489)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: javax.servlet.ServletException: Should not be here because updates were run previously
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:350)
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:42)
+	... 6 more
+Caused by: org.openmrs.util.DatabaseUpdateException: There was an error while updating the database to the latest. file: org/openmrs/liquibase/updates/liquibase-update-to-latest-2.0.x.xml. Error: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:193)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:153)
+	at org.openmrs.api.context.Context.checkForDatabaseUpdates(Context.java:1310)
+	at org.openmrs.api.context.Context.startup(Context.java:1013)
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:347)
+	... 7 more
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:245)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:189)
+	... 11 more
+Caused by: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:882)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.Scope.child(Scope.java:282)
+	at liquibase.Scope.child(Scope.java:286)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91)
+	... 13 more
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase-update-to-latest.xml::20090402-1517::bwolfe:
+     Reason: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:845)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:127)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:71)
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:879)
+	... 26 more
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:176)
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:134)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1198)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:793)
+	... 29 more
+Caused by: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:118)
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:170)
+	... 32 more
+Caused by: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:113)
+	... 33 more
+</pre>
+        </div>
+      </div>
+    </div>
+    <script>
+    const toggleButton = document.getElementById('toggle-details');
+    const copyButton = document.getElementById('copy-stacktrace');
+    const stacktrace = document.getElementById('stacktrace');
+    const contentContainer = document.querySelector('.content-container');
+
+    toggleButton.addEventListener('click', () =&gt; {
+        stacktrace.classList.toggle('stacktrace-hidden');
+        toggleButton.textContent = stacktrace.classList.contains('stacktrace-hidden') ? 'Show Details' : 'Hide Details';
+
+        contentContainer.style.height = 'auto';
+        requestAnimationFrame(() =&gt; {
+            contentContainer.style.height = contentContainer.scrollHeight + "px";
+        });
+    });
+
+    copyButton.addEventListener('click', () =&gt; {
+        const text = stacktrace.textContent;
+        navigator.clipboard.writeText(text).then(() =&gt; {
+            copyButton.textContent = 'Copied to clipboard!';
+            setTimeout(() =&gt; {
+                copyButton.textContent = 'Copy Stacktrace';
+            }, 1500);
+        }).catch(() =&gt; {
+            alert('Failed to copy stacktrace.');
+        });
+    });
+
+    window.addEventListener('load', () =&gt; {
+        contentContainer.style.height = contentContainer.scrollHeight + "px";
+    });
+</script>
+    <style>
+    .content-container {
+        width: 100%;
+        max-width: 650px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+        text-align: center;
+        margin: 0 0 1rem;
+    }
+
+    .button-secondary {
+		background-color: var(--openmrs-logo-color);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 10px;
+		font-size: 1rem;
+		cursor: pointer;
+		margin: 0.5rem 0.5rem 0 0;
+	}
+
+    .error-box {
+        background: #fff0f0;
+        border: 1px solid #f5c2c7;
+        padding: 1rem;
+        border-radius: 8px;
+        color: red;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .error-message {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .error-description {
+        font-size: 1rem;
+    }
+
+    .stacktrace-hidden {
+        display: none;
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    #stacktrace {
+        background: #f8f9fa;
+        color: var(--text-color);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 0.9rem;
+        max-height: 300px;
+        margin-top: 1rem;
+        border: 1px solid #ddd;
+    }
+</style>
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img class="logo-image" src="images/openmrslogo.png" alt="OpenMRS Logo"/>
+        </div>
+        <div class="footer-links">
+          <a shape="rect" class="footer-link" href="https://openmrs.org" target="_blank">Website</a>
+          <span class="footer-divider">|</span>
+          <a shape="rect" class="footer-link" href="https://wiki.openmrs.org" target="_blank">Wiki</a>
+          <span class="footer-divider">|</span>
+          <a shape="rect" class="footer-link" href="https://talk.openmrs.org" target="_blank">Community</a>
+        </div>
+        <div class="footer-copyright">
+            © OpenMRS. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 120px;
+    }
+
+    .app-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        height: 100px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-image {
+        height: 30px;
+        width: auto;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+
+    .footer-divider {
+        color: #ccc;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        overflow-y: auto;
+        max-height: calc(100vh - 180px);
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-bottom: 140px;
+        }
+
+        .footer-content {
+            padding: 0 1rem;
+        }
+
+        .footer-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .content-container {
+            margin: 1rem;
+            max-height: calc(100vh - 200px);
+        }
+    }
+</style>
+  </body>
+</html>
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="invalidCredentials_sessionReturnsAuthenticatedFalse" classname="api.PatientApiTest" time="0.485">
+    <failure message="1 expectation failed.&#10;XML path authenticated doesn&apos;t match.&#10;Expected: &lt;false&gt;&#10;  Actual: &lt;nullnullnullnullnull&#10;		:root {&#10;			--primary-color: #F26522;&#10;			--secondary-color: #5B57A6;&#10;			--background-color: #ecf3f7;&#10;			--success-color: #4CAF50;&#10;			--error-color: #f44336;&#10;			--warning-color: #ff9800;&#10;			--text-color: #333333;&#10;			--openmrs-logo-color: #246B63;&#10;		}&#10;&#10;        * {&#10;            margin: 0;&#10;            padding: 0;&#10;            box-sizing: border-box;&#10;            font-family: &quot;Roboto&quot;, sans-serif;&#10;        }&#10;&#10;        body {&#10;            background: var(--background-color);&#10;            color: var(--text-color);&#10;            padding: 20px;&#10;        }&#10;&#10;        .header-container {&#10;            max-width: 1200px;&#10;            margin: 0 auto;&#10;            padding: 20px;&#10;        }&#10;&#10;        .logo-section {&#10;            display: flex;&#10;            align-items: center;&#10;            gap: 20px;&#10;            margin-bottom: 30px;&#10;        }&#10;&#10;        .logo {&#10;            width: 100px;&#10;            height: 98px;&#10;            background-image: url(images/openmrs_logo_white.gif);&#10;            background-repeat: no-repeat;&#10;            background-size: contain;&#10;        }&#10;&#10;        .header-bar {&#10;            background: var(--openmrs-logo-color);&#10;            border-radius: 8px;&#10;            padding: 15px 25px;&#10;            text-align: center;&#10;            color: white;&#10;            font-size: 1.5rem;&#10;            font-weight: 500;&#10;            box-shadow: 0 3px 5px #246B63;&#10;            min-width: 930px;&#10;    		margin-right: 600px;&#10;        }&#10;&#10;        .message-container {&#10;            margin: 20px 0;&#10;        }&#10;&#10;        .openmrs_error {&#10;            padding: 15px;&#10;            background-color: #ffebee;&#10;            border-left: 4px solid var(--error-color);&#10;            border-radius: 8px;&#10;            margin-bottom: 10px;&#10;            box-shadow: 0 2px 4px rgba(0,0,0,0.05);&#10;            color: #c62828;&#10;        }&#10;&#10;        ul {&#10;            padding-left: 20px;&#10;        }&#10;&#10;        li {&#10;            margin-bottom: 8px;&#10;        }&#10;    null&#10;                The OpenMRS server is not able to start&#10;            OpenMRS Application Startup FailedThe following error occurred at startup:Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previouslyShow DetailsCopy Stacktraceorg.openmrs.module.ModuleException: Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously&#10;	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:44)&#10;	at org.openmrs.api.context.Daemon.lambda$runInDaemonThreadInternal$5(Daemon.java:489)&#10;	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)&#10;	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)&#10;	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)&#10;	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)&#10;	at java.base/java.lang.Thread.run(Thread.java:1583)&#10;Caused by: javax.servlet.ServletException: Should not be here because updates were run previously&#10;	at org.openmrs.web.Listener.startOpenmrs(Listener.java:350)&#10;	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:42)&#10;	... 6 more&#10;Caused by: org.openmrs.util.DatabaseUpdateException: There was an error while updating the database to the latest. file: org/openmrs/liquibase/updates/liquibase-update-to-latest-2.0.x.xml. Error: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:193)&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:153)&#10;	at org.openmrs.api.context.Context.checkForDatabaseUpdates(Context.java:1310)&#10;	at org.openmrs.api.context.Context.startup(Context.java:1013)&#10;	at org.openmrs.web.Listener.startOpenmrs(Listener.java:347)&#10;	... 7 more&#10;Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe&#10;	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155)&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:245)&#10;	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:189)&#10;	... 11 more&#10;Caused by: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe&#10;	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:882)&#10;	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133)&#10;	at liquibase.Scope.lambda$child$0(Scope.java:216)&#10;	at liquibase.Scope.child(Scope.java:225)&#10;	at liquibase.Scope.child(Scope.java:215)&#10;	at liquibase.Scope.child(Scope.java:194)&#10;	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122)&#10;	at liquibase.Scope.lambda$child$0(Scope.java:216)&#10;	at liquibase.Scope.child(Scope.java:225)&#10;	at liquibase.Scope.child(Scope.java:215)&#10;	at liquibase.Scope.child(Scope.java:194)&#10;	at liquibase.Scope.child(Scope.java:282)&#10;	at liquibase.Scope.child(Scope.java:286)&#10;	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91)&#10;	... 13 more&#10;Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase-update-to-latest.xml::20090402-1517::bwolfe:&#10;     Reason: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:845)&#10;	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:127)&#10;	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:71)&#10;	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:879)&#10;	... 26 more&#10;Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:176)&#10;	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:134)&#10;	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1198)&#10;	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:793)&#10;	... 29 more&#10;Caused by: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:118)&#10;	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:170)&#10;	... 32 more&#10;Caused by: java.sql.SQLSyntaxErrorException: Table &apos;openmrs-db.relationship&apos; doesn&apos;t exist&#10;	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)&#10;	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)&#10;	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)&#10;	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)&#10;	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:113)&#10;	... 33 more&#10;&#10;    const toggleButton = document.getElementById(&apos;toggle-details&apos;);&#10;    const copyButton = document.getElementById(&apos;copy-stacktrace&apos;);&#10;    const stacktrace = document.getElementById(&apos;stacktrace&apos;);&#10;    const contentContainer = document.querySelector(&apos;.content-container&apos;);&#10;&#10;    toggleButton.addEventListener(&apos;click&apos;, () =&gt; {&#10;        stacktrace.classList.toggle(&apos;stacktrace-hidden&apos;);&#10;        toggleButton.textContent = stacktrace.classList.contains(&apos;stacktrace-hidden&apos;) ? &apos;Show Details&apos; : &apos;Hide Details&apos;;&#10;&#10;        contentContainer.style.height = &apos;auto&apos;;&#10;        requestAnimationFrame(() =&gt; {&#10;            contentContainer.style.height = contentContainer.scrollHeight + &quot;px&quot;;&#10;        });&#10;    });&#10;&#10;    copyButton.addEventListener(&apos;click&apos;, () =&gt; {&#10;        const text = stacktrace.textContent;&#10;        navigator.clipboard.writeText(text).then(() =&gt; {&#10;            copyButton.textContent = &apos;Copied to clipboard!&apos;;&#10;            setTimeout(() =&gt; {&#10;                copyButton.textContent = &apos;Copy Stacktrace&apos;;&#10;            }, 1500);&#10;        }).catch(() =&gt; {&#10;            alert(&apos;Failed to copy stacktrace.&apos;);&#10;        });&#10;    });&#10;&#10;    window.addEventListener(&apos;load&apos;, () =&gt; {&#10;        contentContainer.style.height = contentContainer.scrollHeight + &quot;px&quot;;&#10;    });&#10;&#10;    .content-container {&#10;        width: 100%;&#10;        max-width: 650px;&#10;        background: white;&#10;        border-radius: 12px;&#10;        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);&#10;        padding: 2rem;&#10;        overflow: hidden;&#10;    }&#10;&#10;    .form-container {&#10;        display: flex;&#10;        flex-direction: column;&#10;        gap: 1.5rem;&#10;    }&#10;&#10;    .form-title {&#10;        font-size: 1.5rem;&#10;        font-weight: 500;&#10;        color: var(--text-color);&#10;        text-align: center;&#10;        margin: 0 0 1rem;&#10;    }&#10;&#10;    .button-secondary {&#10;		background-color: var(--openmrs-logo-color);&#10;		color: white;&#10;		padding: 10px 20px;&#10;		border: none;&#10;		border-radius: 10px;&#10;		font-size: 1rem;&#10;		cursor: pointer;&#10;		margin: 0.5rem 0.5rem 0 0;&#10;	}&#10;&#10;    .error-box {&#10;        background: #fff0f0;&#10;        border: 1px solid #f5c2c7;&#10;        padding: 1rem;&#10;        border-radius: 8px;&#10;        color: red;&#10;        display: flex;&#10;        flex-direction: column;&#10;        gap: 1rem;&#10;        word-wrap: break-word;&#10;        overflow-wrap: break-word;&#10;        overflow: hidden;&#10;    }&#10;&#10;    .error-message {&#10;        font-weight: bold;&#10;        font-size: 1.1rem;&#10;    }&#10;&#10;    .error-description {&#10;        font-size: 1rem;&#10;    }&#10;&#10;    .stacktrace-hidden {&#10;        display: none;&#10;        max-height: 0;&#10;        padding: 0;&#10;        margin: 0;&#10;        border: none;&#10;        overflow: hidden;&#10;    }&#10;&#10;    #stacktrace {&#10;        background: #f8f9fa;&#10;        color: var(--text-color);&#10;        padding: 1rem;&#10;        border-radius: 8px;&#10;        overflow-x: auto;&#10;        font-size: 0.9rem;&#10;        max-height: 300px;&#10;        margin-top: 1rem;&#10;        border: 1px solid #ddd;&#10;    }&#10;nullWebsite|Wiki|Community&#10;            © OpenMRS. All rights reserved.&#10;        &#10;    body {&#10;        margin: 0;&#10;        padding: 0;&#10;        min-height: 100vh;&#10;        display: flex;&#10;        flex-direction: column;&#10;        padding-bottom: 120px;&#10;    }&#10;&#10;    .app-footer {&#10;        background-color: #f8f9fa;&#10;        border-top: 1px solid #e0e0e0;&#10;        padding: 1rem 0;&#10;        position: fixed;&#10;        bottom: 0;&#10;        width: 100%;&#10;        z-index: 100;&#10;        height: 100px;&#10;    }&#10;&#10;    .footer-content {&#10;        max-width: 1200px;&#10;        margin: 0 auto;&#10;        padding: 0 1.5rem;&#10;        display: flex;&#10;        flex-direction: column;&#10;        align-items: center;&#10;        gap: 0.75rem;&#10;    }&#10;&#10;    .footer-logo {&#10;        margin-bottom: 0.5rem;&#10;    }&#10;&#10;    .logo-image {&#10;        height: 30px;&#10;        width: auto;&#10;    }&#10;&#10;    .footer-links {&#10;        display: flex;&#10;        align-items: center;&#10;        gap: 1rem;&#10;    }&#10;&#10;    .footer-link {&#10;        color: var(--text-color);&#10;        text-decoration: none;&#10;        font-size: 0.9rem;&#10;        transition: color 0.2s ease;&#10;    }&#10;&#10;    .footer-link:hover {&#10;        color: var(--primary-color);&#10;    }&#10;&#10;    .footer-divider {&#10;        color: #ccc;&#10;    }&#10;&#10;    .footer-copyright {&#10;        font-size: 0.8rem;&#10;    }&#10;&#10;    .content-container {&#10;        max-width: 600px;&#10;        margin: 0 auto;&#10;        padding: 1.5rem;&#10;        background: white;&#10;        border-radius: 12px;&#10;        box-shadow: 0 2px 4px rgba(0,0,0,0.05);&#10;        margin-bottom: 20px;&#10;        overflow-y: auto;&#10;        max-height: calc(100vh - 180px);&#10;    }&#10;&#10;    @media (max-width: 768px) {&#10;        body {&#10;            padding-bottom: 140px;&#10;        }&#10;&#10;        .footer-content {&#10;            padding: 0 1rem;&#10;        }&#10;&#10;        .footer-links {&#10;            flex-wrap: wrap;&#10;            justify-content: center;&#10;        }&#10;&#10;        .content-container {&#10;            margin: 1rem;&#10;            max-height: calc(100vh - 200px);&#10;        }&#10;    }&#10;&gt;&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+XML path authenticated doesn't match.
+Expected: <false>
+  Actual: <nullnullnullnullnull
+		:root {
+			--primary-color: #F26522;
+			--secondary-color: #5B57A6;
+			--background-color: #ecf3f7;
+			--success-color: #4CAF50;
+			--error-color: #f44336;
+			--warning-color: #ff9800;
+			--text-color: #333333;
+			--openmrs-logo-color: #246B63;
+		}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 98px;
+            background-image: url(images/openmrs_logo_white.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .header-bar {
+            background: var(--openmrs-logo-color);
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+            box-shadow: 0 3px 5px #246B63;
+            min-width: 930px;
+    		margin-right: 600px;
+        }
+
+        .message-container {
+            margin: 20px 0;
+        }
+
+        .openmrs_error {
+            padding: 15px;
+            background-color: #ffebee;
+            border-left: 4px solid var(--error-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: #c62828;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    null
+                The OpenMRS server is not able to start
+            OpenMRS Application Startup FailedThe following error occurred at startup:Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previouslyShow DetailsCopy Stacktraceorg.openmrs.module.ModuleException: Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:44)
+	at org.openmrs.api.context.Daemon.lambda$runInDaemonThreadInternal$5(Daemon.java:489)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: javax.servlet.ServletException: Should not be here because updates were run previously
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:350)
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:42)
+	... 6 more
+Caused by: org.openmrs.util.DatabaseUpdateException: There was an error while updating the database to the latest. file: org/openmrs/liquibase/updates/liquibase-update-to-latest-2.0.x.xml. Error: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:193)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:153)
+	at org.openmrs.api.context.Context.checkForDatabaseUpdates(Context.java:1310)
+	at org.openmrs.api.context.Context.startup(Context.java:1013)
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:347)
+	... 7 more
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:245)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:189)
+	... 11 more
+Caused by: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:882)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.Scope.child(Scope.java:282)
+	at liquibase.Scope.child(Scope.java:286)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91)
+	... 13 more
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase-update-to-latest.xml::20090402-1517::bwolfe:
+     Reason: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:845)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:127)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:71)
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:879)
+	... 26 more
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:176)
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:134)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1198)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:793)
+	... 29 more
+Caused by: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:118)
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:170)
+	... 32 more
+Caused by: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:113)
+	... 33 more
+
+    const toggleButton = document.getElementById('toggle-details');
+    const copyButton = document.getElementById('copy-stacktrace');
+    const stacktrace = document.getElementById('stacktrace');
+    const contentContainer = document.querySelector('.content-container');
+
+    toggleButton.addEventListener('click', () => {
+        stacktrace.classList.toggle('stacktrace-hidden');
+        toggleButton.textContent = stacktrace.classList.contains('stacktrace-hidden') ? 'Show Details' : 'Hide Details';
+
+        contentContainer.style.height = 'auto';
+        requestAnimationFrame(() => {
+            contentContainer.style.height = contentContainer.scrollHeight + "px";
+        });
+    });
+
+    copyButton.addEventListener('click', () => {
+        const text = stacktrace.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            copyButton.textContent = 'Copied to clipboard!';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy Stacktrace';
+            }, 1500);
+        }).catch(() => {
+            alert('Failed to copy stacktrace.');
+        });
+    });
+
+    window.addEventListener('load', () => {
+        contentContainer.style.height = contentContainer.scrollHeight + "px";
+    });
+
+    .content-container {
+        width: 100%;
+        max-width: 650px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+        text-align: center;
+        margin: 0 0 1rem;
+    }
+
+    .button-secondary {
+		background-color: var(--openmrs-logo-color);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 10px;
+		font-size: 1rem;
+		cursor: pointer;
+		margin: 0.5rem 0.5rem 0 0;
+	}
+
+    .error-box {
+        background: #fff0f0;
+        border: 1px solid #f5c2c7;
+        padding: 1rem;
+        border-radius: 8px;
+        color: red;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .error-message {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .error-description {
+        font-size: 1rem;
+    }
+
+    .stacktrace-hidden {
+        display: none;
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    #stacktrace {
+        background: #f8f9fa;
+        color: var(--text-color);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 0.9rem;
+        max-height: 300px;
+        margin-top: 1rem;
+        border: 1px solid #ddd;
+    }
+nullWebsite|Wiki|Community
+            © OpenMRS. All rights reserved.
+        
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 120px;
+    }
+
+    .app-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        height: 100px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-image {
+        height: 30px;
+        width: auto;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+
+    .footer-divider {
+        color: #ccc;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        overflow-y: auto;
+        max-height: calc(100vh - 180px);
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-bottom: 140px;
+        }
+
+        .footer-content {
+            padding: 0 1rem;
+        }
+
+        .footer-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .content-container {
+            margin: 1rem;
+            max-height: calc(100vh - 200px);
+        }
+    }
+>
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
+	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at api.PatientApiTest.invalidCredentials_sessionReturnsAuthenticatedFalse(PatientApiTest.java:126)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+  </testcase>
+  <testcase name="createPatient_returns201WithNonNullUuid" classname="api.PatientApiTest" time="0.326">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;302&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <302>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at api.PatientApiTest.createPatient_returns201WithNonNullUuid(PatientApiTest.java:146)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[Request method:	POST
+Request URI:	https://demo.openmrs.org/openmrs/ws/rest/v1/patient
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "names": [
+        {
+            "givenName": "Dottie",
+            "familyName": "Yost"
+        }
+    ],
+    "gender": "M",
+    "birthdate": "1990-01-01"
+}
+HTTP/1.1 302 Moved Temporarily
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 28 Jun 2026 19:30:19 GMT
+Content-Type: text/html
+Content-Length: 154
+Connection: keep-alive
+Location: https://o3.openmrs.org/openmrs/ws/rest/v1/patient
+Strict-Transport-Security: max-age=31536000
+
+<html>
+  <head>
+    <title>302 Found</title>
+  </head>
+  <body>
+    <center>
+      <h1>302 Found</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.18.0 (Ubuntu)</center>
+  </body>
+</html>
+]]></system-out>
+  </testcase>
+  <testcase name="fetchPatientByUuid_returns200WithMatchingUuidAndNotVoided" classname="api.PatientApiTest" time="0.0">
+    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Assumption failed: Skipping: shared patient from TC-API-003 is unavailable — check prior failure
+	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+	at api.PatientApiTest.requireSharedPatient(PatientApiTest.java:86)
+	at api.PatientApiTest.fetchPatientByUuid_returns200WithMatchingUuidAndNotVoided(PatientApiTest.java:162)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></skipped>
+  </testcase>
+  <testcase name="searchByGivenName_resultsNonEmptyAndContainsCreatedUuid" classname="api.PatientApiTest" time="0.0">
+    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Assumption failed: Skipping: shared patient from TC-API-003 is unavailable — check prior failure
+	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+	at api.PatientApiTest.requireSharedPatient(PatientApiTest.java:86)
+	at api.PatientApiTest.searchByGivenName_resultsNonEmptyAndContainsCreatedUuid(PatientApiTest.java:182)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></skipped>
+  </testcase>
+  <testcase name="deletePatient_returns200AndSubsequentGetShowsVoidedTrue" classname="api.PatientApiTest" time="0.0">
+    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Assumption failed: Skipping: shared patient from TC-API-003 is unavailable — check prior failure
+	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+	at api.PatientApiTest.requireSharedPatient(PatientApiTest.java:86)
+	at api.PatientApiTest.deletePatient_returns200AndSubsequentGetShowsVoidedTrue(PatientApiTest.java:203)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></skipped>
+  </testcase>
+  <testcase name="fetchNonExistentPatient_returns404" classname="api.PatientApiTest" time="0.568">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;404&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <404> but was <200>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at api.PatientApiTest.fetchNonExistentPatient_returns404(PatientApiTest.java:237)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[Request method:	GET
+Request URI:	https://demo.openmrs.org/openmrs/ws/rest/v1/patient/00000000-0000-0000-0000-000000000000
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 28 Jun 2026 19:30:19 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' localhost localhost:*; base-uri 'self'; font-src 'self'; img-src 'self' data:; frame-ancestors 'self' ;
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=31536000
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="initfilter/scripts/jquery/jquery.min.js"/>
+    <script type="text/javascript" src="initfilter/scripts/initialsetup.js"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"/>
+    <style type="text/css" media="all">
+		:root {
+			--primary-color: #F26522;
+			--secondary-color: #5B57A6;
+			--background-color: #ecf3f7;
+			--success-color: #4CAF50;
+			--error-color: #f44336;
+			--warning-color: #ff9800;
+			--text-color: #333333;
+			--openmrs-logo-color: #246B63;
+		}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 98px;
+            background-image: url(images/openmrs_logo_white.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .header-bar {
+            background: var(--openmrs-logo-color);
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+            box-shadow: 0 3px 5px #246B63;
+            min-width: 930px;
+    		margin-right: 600px;
+        }
+
+        .message-container {
+            margin: 20px 0;
+        }
+
+        .openmrs_error {
+            padding: 15px;
+            background-color: #ffebee;
+            border-left: 4px solid var(--error-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: #c62828;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="images/openmrs_logo_white.gif" alt="OpenMRS White Logo"/>
+        <div class="header-bar">
+                The OpenMRS server is not able to start
+            </div>
+      </div>
+    </div>
+  </body>
+  <body>
+    <div class="content-container">
+      <div class="form-container">
+        <h2 class="form-title">OpenMRS Application Startup Failed</h2>
+        <div class="error-box">
+          <p class="error-message">
+            <strong>The following error occurred at startup:</strong>
+          </p>
+          <p class="error-description">Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously</p>
+          <button type="button" class="button-secondary" id="toggle-details">Show Details</button>
+          <button type="button" class="button-secondary" id="copy-stacktrace">Copy Stacktrace</button>
+          <pre class="stacktrace-hidden" id="stacktrace">org.openmrs.module.ModuleException: Unable to start OpenMRS. Error thrown was: Should not be here because updates were run previously
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:44)
+	at org.openmrs.api.context.Daemon.lambda$runInDaemonThreadInternal$5(Daemon.java:489)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: javax.servlet.ServletException: Should not be here because updates were run previously
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:350)
+	at org.openmrs.web.WebDaemon.lambda$startOpenmrs$0(WebDaemon.java:42)
+	... 6 more
+Caused by: org.openmrs.util.DatabaseUpdateException: There was an error while updating the database to the latest. file: org/openmrs/liquibase/updates/liquibase-update-to-latest-2.0.x.xml. Error: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:193)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:153)
+	at org.openmrs.api.context.Context.checkForDatabaseUpdates(Context.java:1310)
+	at org.openmrs.api.context.Context.startup(Context.java:1013)
+	at org.openmrs.web.Listener.startOpenmrs(Listener.java:347)
+	... 7 more
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:245)
+	at org.openmrs.util.DatabaseUpdater.executeChangelog(DatabaseUpdater.java:189)
+	... 11 more
+Caused by: liquibase.exception.LiquibaseException: Unable to execute change set: liquibase-update-to-latest.xml::20090402-1517::bwolfe
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:882)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122)
+	at liquibase.Scope.lambda$child$0(Scope.java:216)
+	at liquibase.Scope.child(Scope.java:225)
+	at liquibase.Scope.child(Scope.java:215)
+	at liquibase.Scope.child(Scope.java:194)
+	at liquibase.Scope.child(Scope.java:282)
+	at liquibase.Scope.child(Scope.java:286)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91)
+	... 13 more
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase-update-to-latest.xml::20090402-1517::bwolfe:
+     Reason: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:845)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:127)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:71)
+	at org.openmrs.util.DatabaseUpdater$OpenmrsUpdateVisitor.visit(DatabaseUpdater.java:879)
+	... 26 more
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:176)
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:134)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1198)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:793)
+	... 29 more
+Caused by: liquibase.exception.CustomChangeException: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:118)
+	at liquibase.change.custom.CustomChangeWrapper.generateStatements(CustomChangeWrapper.java:170)
+	... 32 more
+Caused by: java.sql.SQLSyntaxErrorException: Table 'openmrs-db.relationship' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.openmrs.util.databasechange.GenerateUuid.execute(GenerateUuid.java:113)
+	... 33 more
+</pre>
+        </div>
+      </div>
+    </div>
+    <script>
+    const toggleButton = document.getElementById('toggle-details');
+    const copyButton = document.getElementById('copy-stacktrace');
+    const stacktrace = document.getElementById('stacktrace');
+    const contentContainer = document.querySelector('.content-container');
+
+    toggleButton.addEventListener('click', () =&gt; {
+        stacktrace.classList.toggle('stacktrace-hidden');
+        toggleButton.textContent = stacktrace.classList.contains('stacktrace-hidden') ? 'Show Details' : 'Hide Details';
+
+        contentContainer.style.height = 'auto';
+        requestAnimationFrame(() =&gt; {
+            contentContainer.style.height = contentContainer.scrollHeight + "px";
+        });
+    });
+
+    copyButton.addEventListener('click', () =&gt; {
+        const text = stacktrace.textContent;
+        navigator.clipboard.writeText(text).then(() =&gt; {
+            copyButton.textContent = 'Copied to clipboard!';
+            setTimeout(() =&gt; {
+                copyButton.textContent = 'Copy Stacktrace';
+            }, 1500);
+        }).catch(() =&gt; {
+            alert('Failed to copy stacktrace.');
+        });
+    });
+
+    window.addEventListener('load', () =&gt; {
+        contentContainer.style.height = contentContainer.scrollHeight + "px";
+    });
+</script>
+    <style>
+    .content-container {
+        width: 100%;
+        max-width: 650px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+        text-align: center;
+        margin: 0 0 1rem;
+    }
+
+    .button-secondary {
+		background-color: var(--openmrs-logo-color);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 10px;
+		font-size: 1rem;
+		cursor: pointer;
+		margin: 0.5rem 0.5rem 0 0;
+	}
+
+    .error-box {
+        background: #fff0f0;
+        border: 1px solid #f5c2c7;
+        padding: 1rem;
+        border-radius: 8px;
+        color: red;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .error-message {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .error-description {
+        font-size: 1rem;
+    }
+
+    .stacktrace-hidden {
+        display: none;
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    #stacktrace {
+        background: #f8f9fa;
+        color: var(--text-color);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 0.9rem;
+        max-height: 300px;
+        margin-top: 1rem;
+        border: 1px solid #ddd;
+    }
+</style>
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img class="logo-image" src="images/openmrslogo.png" alt="OpenMRS Logo"/>
+        </div>
+        <div class="footer-links">
+          <a shape="rect" class="footer-link" href="https://openmrs.org" target="_blank">Website</a>
+          <span class="footer-divider">|</span>
+          <a shape="rect" class="footer-link" href="https://wiki.openmrs.org" target="_blank">Wiki</a>
+          <span class="footer-divider">|</span>
+          <a shape="rect" class="footer-link" href="https://talk.openmrs.org" target="_blank">Community</a>
+        </div>
+        <div class="footer-copyright">
+            © OpenMRS. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 120px;
+    }
+
+    .app-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        height: 100px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-image {
+        height: 30px;
+        width: auto;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+
+    .footer-divider {
+        color: #ccc;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        overflow-y: auto;
+        max-height: calc(100vh - 180px);
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-bottom: 140px;
+        }
+
+        .footer-content {
+            padding: 0 1rem;
+        }
+
+        .footer-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .content-container {
+            margin: 1rem;
+            max-height: calc(100vh - 200px);
+        }
+    }
+</style>
+  </body>
+</html>
+]]></system-out>
+  </testcase>
+  <testcase name="createPatientEmptyBody_returns400" classname="api.PatientApiTest" time="0.194">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;302&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <400> but was <302>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at api.PatientApiTest.createPatientEmptyBody_returns400(PatientApiTest.java:254)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[Request method:	POST
+Request URI:	https://demo.openmrs.org/openmrs/ws/rest/v1/patient
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    
+}
+HTTP/1.1 302 Moved Temporarily
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 28 Jun 2026 19:30:20 GMT
+Content-Type: text/html
+Content-Length: 154
+Connection: keep-alive
+Location: https://o3.openmrs.org/openmrs/ws/rest/v1/patient
+Strict-Transport-Security: max-age=31536000
+
+<html>
+  <head>
+    <title>302 Found</title>
+  </head>
+  <body>
+    <center>
+      <h1>302 Found</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.18.0 (Ubuntu)</center>
+  </body>
+</html>
+]]></system-out>
+  </testcase>
+  <testcase name="chainedLifecycle_createFetchDeleteVerifyVoided" classname="api.PatientApiTest" time="0.318">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;302&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <302>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at api.PatientApiTest.createPatient(PatientApiTest.java:62)
+	at api.PatientApiTest.chainedLifecycle_createFetchDeleteVerifyVoided(PatientApiTest.java:269)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[Request method:	POST
+Request URI:	https://demo.openmrs.org/openmrs/ws/rest/v1/patient
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "names": [
+        {
+            "givenName": "Dudley",
+            "familyName": "Jacobs"
+        }
+    ],
+    "gender": "M",
+    "birthdate": "1990-01-01"
+}
+HTTP/1.1 302 Moved Temporarily
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 28 Jun 2026 19:30:20 GMT
+Content-Type: text/html
+Content-Length: 154
+Connection: keep-alive
+Location: https://o3.openmrs.org/openmrs/ws/rest/v1/patient
+Strict-Transport-Security: max-age=31536000
+
+<html>
+  <head>
+    <title>302 Found</title>
+  </head>
+  <body>
+    <center>
+      <h1>302 Found</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.18.0 (Ubuntu)</center>
+  </body>
+</html>
+]]></system-out>
+  </testcase>
+</testsuite>
