@@ -7,6 +7,8 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 import utils.ConfigLoader;
 
+import java.util.Random;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -15,6 +17,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 /**
  * Component 3 — Automated API Test Suite
  * Covers TC-API-001 through TC-API-009 from docs/Test_Cases.md.
+ * Target: OpenMRS 2.x Reference Application (O2) — https://o2.openmrs.org
  *
  * Execution order matters for TC-004, TC-005, TC-006 which share the UUID
  * created by TC-003. Tests that depend on a prior step use assumeTrue() so
@@ -24,7 +27,11 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PatientApiTest extends BaseTest {
 
-    private static final Faker FAKER = new Faker();
+    private static final Faker  FAKER = new Faker();
+    private static final Random RNG   = new Random();
+
+    // ── Luhn Mod-30 character set used by the OpenMRS ID generator ───────────
+    private static final String LUHN_CHARS = "0123456789ACDEFGHJKLMNPRTUVWXY";
 
     // ── Shared state for TC-003 → TC-004, TC-005, TC-006 ───────────────────
     private static String sharedPatientUuid;
@@ -35,17 +42,60 @@ public class PatientApiTest extends BaseTest {
     // ═══════════════════════════════════════════════════════════════════════
 
     /**
-     * Builds a minimal valid OpenMRS patient JSON payload.
-     * Gender: "M" or "F"; birthdate: "YYYY-MM-DD".
+     * Generates a 6-character OpenMRS ID (5-digit numeric base + Luhn Mod-30
+     * check digit) that passes the server-side LuhnMod30IdentifierValidator.
+     *
+     * The OpenMRS variant differs from textbook Luhn in two ways:
+     *  1. The rightmost character is doubled first (doubled starts true).
+     *  2. When a doubled value >= 30, reduce via base-30 digit sum
+     *     (val/30 + val%30) rather than a plain subtraction.
+     */
+    private static String generatePatientId() {
+        int base = 10000 + RNG.nextInt(89999); // 10000–99999
+        String baseStr = String.valueOf(base);
+
+        int sum = 0;
+        boolean doubled = true;
+        for (int i = baseStr.length() - 1; i >= 0; i--) {
+            int val = LUHN_CHARS.indexOf(baseStr.charAt(i));
+            if (doubled) {
+                val *= 2;
+                if (val >= LUHN_CHARS.length()) {
+                    val = val / LUHN_CHARS.length() + val % LUHN_CHARS.length();
+                }
+            }
+            sum += val;
+            doubled = !doubled;
+        }
+        int checkIdx = (LUHN_CHARS.length() - (sum % LUHN_CHARS.length())) % LUHN_CHARS.length();
+        return baseStr + LUHN_CHARS.charAt(checkIdx);
+    }
+
+    /**
+     * Builds a valid OpenMRS 2.x patient JSON payload.
+     * OpenMRS 2.x requires person properties nested under "person" and at least
+     * one entry in "identifiers" with a valid Luhn Mod-30 OpenMRS ID.
      */
     private static String patientJson(String givenName, String familyName,
                                       String gender, String birthdate) {
         return String.format("""
                 {
-                  "names": [{ "givenName": "%s", "familyName": "%s" }],
-                  "gender": "%s",
-                  "birthdate": "%s"
-                }""", givenName, familyName, gender, birthdate);
+                  "person": {
+                    "names": [{ "givenName": "%s", "familyName": "%s" }],
+                    "gender": "%s",
+                    "birthdate": "%s"
+                  },
+                  "identifiers": [{
+                    "identifier": "%s",
+                    "identifierType": "%s",
+                    "location": "%s",
+                    "preferred": true
+                  }]
+                }""",
+                givenName, familyName, gender, birthdate,
+                generatePatientId(),
+                ConfigLoader.getIdentifierTypeUuid(),
+                ConfigLoader.getLocationUuid());
     }
 
     /**
@@ -65,8 +115,8 @@ public class PatientApiTest extends BaseTest {
     }
 
     /**
-     * DELETEs (voids) a patient. OpenMRS performs a soft-delete;
-     * the record remains accessible with voided:true.
+     * DELETEs (voids) a patient. OpenMRS 2.x performs a soft-delete and
+     * returns 204 No Content; the record remains accessible with voided:true.
      */
     private static void deletePatient(String uuid) {
         given()
@@ -75,7 +125,7 @@ public class PatientApiTest extends BaseTest {
                 .when()
                 .delete("/patient/" + uuid)
                 .then()
-                .statusCode(200);
+                .statusCode(204);
     }
 
     /**
@@ -102,7 +152,7 @@ public class PatientApiTest extends BaseTest {
                 .then()
                 .statusCode(200)
                 .body("authenticated", equalTo(true))
-                .body("sessionId", notNullValue());
+                .body("user", notNullValue());
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -134,7 +184,7 @@ public class PatientApiTest extends BaseTest {
     @Order(3)
     @DisplayName("TC-API-003 — POST /patient with valid data returns 201 and a UUID")
     void createPatient_returns201WithNonNullUuid() {
-        sharedGivenName        = FAKER.name().firstName();
+        sharedGivenName         = FAKER.name().firstName();
         String sharedFamilyName = FAKER.name().lastName();
 
         Response response = given()
@@ -188,8 +238,8 @@ public class PatientApiTest extends BaseTest {
                 .get("/patient")
                 .then()
                 .statusCode(200)
-                .body("results",       not(empty()))
-                .body("results.uuid",  hasItem(sharedPatientUuid));
+                .body("results",      not(empty()))
+                .body("results.uuid", hasItem(sharedPatientUuid));
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -198,18 +248,18 @@ public class PatientApiTest extends BaseTest {
 
     @Test
     @Order(6)
-    @DisplayName("TC-API-006 — DELETE /patient/{uuid} returns 200; subsequent GET shows voided:true")
+    @DisplayName("TC-API-006 — DELETE /patient/{uuid} returns 204; subsequent GET shows voided:true")
     void deletePatient_returns200AndSubsequentGetShowsVoidedTrue() {
         requireSharedPatient();
 
-        // Soft-delete (void) the shared patient
+        // Soft-delete (void) the shared patient — OpenMRS 2.x returns 204
         given()
                 .spec(spec)
                 .queryParam("reason", "test cleanup")
                 .when()
                 .delete("/patient/" + sharedPatientUuid)
                 .then()
-                .statusCode(200);
+                .statusCode(204);
 
         // Verify the patient still exists but is now voided
         given()

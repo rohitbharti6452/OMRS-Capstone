@@ -36,11 +36,13 @@ public class ConfigLoader {
         return value.trim();
     }
 
-    public static String getBaseUrl()       { return get("base.url"); }
-    public static String getUiBaseUrl()     { return get("ui.base.url"); }
-    public static String getAdminUsername() { return get("admin.username"); }
-    public static String getAdminPassword() { return get("admin.password"); }
-    public static String getBrowser()       { return get("browser"); }
-    public static boolean isHeadless()      { return Boolean.parseBoolean(get("headless")); }
-    public static int getExplicitWait()     { return Integer.parseInt(get("explicit.wait")); }
+    public static String getBaseUrl()             { return get("base.url"); }
+    public static String getUiBaseUrl()           { return get("ui.base.url"); }
+    public static String getAdminUsername()       { return get("admin.username"); }
+    public static String getAdminPassword()       { return get("admin.password"); }
+    public static String getIdentifierTypeUuid()  { return get("identifier.type.uuid"); }
+    public static String getLocationUuid()        { return get("location.uuid"); }
+    public static String getBrowser()             { return get("browser"); }
+    public static boolean isHeadless()            { return Boolean.parseBoolean(get("headless")); }
+    public static int getExplicitWait()           { return Integer.parseInt(get("explicit.wait")); }
 }
