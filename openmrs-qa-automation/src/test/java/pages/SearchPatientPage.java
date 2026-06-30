@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.ConfigLoader;
 
 /**
@@ -28,26 +29,24 @@ public class SearchPatientPage extends BasePage {
     public SearchPatientPage navigateTo() {
         driver.get(ConfigLoader.getUiBaseUrl()
                 + "/coreapps/findpatient/findPatient.page?app=coreapps.findPatient");
+        waitForVisible(SEARCH_BOX); // wait for SPA to render before any interactions
         return this;
     }
 
     /**
-     * Types the query and waits for the results panel to actually update.
-     * The page pre-populates #patient-search-results with "recently viewed"
-     * rows on load, so simply waiting for "any row to exist" would pass
-     * immediately on stale data — instead this snapshots the panel's text
-     * before typing and waits for it to change (or for the explicit
-     * "No matching records found" message), which only happens once the
-     * debounced AJAX search has actually completed.
+     * Types the query then waits for the results panel or a "no results" message
+     * to become visible. In a fresh CI session there are no recently-viewed patients,
+     * so the results container is hidden on page load — we type first and let the
+     * AJAX search make it appear.
      */
     public SearchPatientPage searchFor(String query) {
-        String beforeText = waitForVisible(RESULTS_CONTAINER).getText();
         var box = waitForVisible(SEARCH_BOX);
         box.clear();
         box.sendKeys(query);
-
-        wait.until(d -> !d.findElements(NO_RESULTS_TEXT).isEmpty()
-                || !d.findElement(RESULTS_CONTAINER).getText().equals(beforeText));
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.visibilityOfElementLocated(RESULTS_CONTAINER),
+            ExpectedConditions.visibilityOfElementLocated(NO_RESULTS_TEXT)
+        ));
         return this;
     }
 

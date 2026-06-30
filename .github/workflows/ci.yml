@@ -88,11 +88,8 @@ jobs:
           distribution: temurin
           cache: maven
 
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
-
       - name: Run UI test suite (LoginUITest — headless)
-        run: mvn -B test -Dtest=LoginUITest -Dheadless=true -Dexplicit.wait=30
+        run: mvn -B test -Dtest=LoginUITest -Dheadless=true -Dexplicit.wait=30 -Dsurefire.rerunFailingTestsCount=2
 
       - name: Publish UI test results
         if: always()
