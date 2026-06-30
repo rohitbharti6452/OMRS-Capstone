@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OpenMRS QA Capstone — Daily Progress Summary | June 30, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', Arial, sans-serif; font-size: 13px; color: #1a1a2e; background: #fff; line-height: 1.6; }
+
+  /* PAGE HEADER */
+  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; padding: 48px 60px 40px; }
+  .cover .logo { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #e94560; margin-bottom: 12px; }
+  .cover h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+  .cover .sub { font-size: 14px; color: #a8b2c8; margin-bottom: 28px; }
+  .cover .meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover .meta-item { }
+  .cover .meta-item .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #e94560; margin-bottom: 2px; }
+  .cover .meta-item .value { font-size: 13px; color: #e0e4f0; font-weight: 600; }
+
+  /* STATUS BADGES */
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .badge-green  { background: #d1fae5; color: #065f46; }
+  .badge-red    { background: #fee2e2; color: #991b1b; }
+  .badge-yellow { background: #fef3c7; color: #92400e; }
+  .badge-blue   { background: #dbeafe; color: #1e40af; }
+  .badge-gray   { background: #f3f4f6; color: #374151; }
+
+  /* BODY */
+  .body { padding: 36px 60px; }
+
+  /* SECTION */
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 16px; font-weight: 700; color: #0f3460; border-left: 4px solid #e94560; padding-left: 12px; margin-bottom: 16px; }
+
+  /* SUMMARY BOXES */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
+  .stat-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; text-align: center; }
+  .stat-card .num { font-size: 28px; font-weight: 700; color: #0f3460; line-height: 1; }
+  .stat-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin-top: 4px; }
+
+  /* TIMELINE */
+  .timeline { border-left: 2px solid #e5e7eb; padding-left: 20px; }
+  .timeline-item { position: relative; margin-bottom: 20px; }
+  .timeline-item::before { content: ''; position: absolute; left: -26px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: #e94560; border: 2px solid #fff; box-shadow: 0 0 0 2px #e94560; }
+  .timeline-item .time { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .timeline-item .title { font-weight: 700; color: #1a1a2e; font-size: 13px; }
+  .timeline-item .desc { color: #4b5563; font-size: 12px; margin-top: 4px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: #f8fafc; color: #374151; font-weight: 700; text-align: left; padding: 10px 12px; border: 1px solid #e5e7eb; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 9px 12px; border: 1px solid #e5e7eb; vertical-align: top; }
+  tr:nth-child(even) td { background: #f9fafb; }
+
+  /* CODE */
+  code { font-family: 'JetBrains Mono', 'Courier New', monospace; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 4px; padding: 1px 6px; font-size: 11px; color: #0f3460; }
+  pre { font-family: 'JetBrains Mono', 'Courier New', monospace; background: #1e293b; color: #e2e8f0; border-radius: 8px; padding: 16px; font-size: 11px; line-height: 1.7; overflow-x: auto; margin: 12px 0; white-space: pre-wrap; }
+  pre .comment { color: #64748b; }
+  pre .kw { color: #7dd3fc; }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; }
+  .checklist li { padding: 6px 0; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 8px; }
+  .checklist li:last-child { border-bottom: none; }
+  .check { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+  .check-done { background: #d1fae5; color: #065f46; }
+  .check-todo { background: #f3f4f6; color: #9ca3af; }
+
+  /* PIPELINE DIAGRAM */
+  .pipeline { display: flex; align-items: center; gap: 0; margin: 16px 0; flex-wrap: wrap; }
+  .pipe-stage { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 100px; }
+  .pipe-stage .stage-name { font-size: 11px; font-weight: 700; color: #1a1a2e; }
+  .pipe-stage .stage-desc { font-size: 10px; color: #6b7280; margin-top: 2px; }
+  .pipe-arrow { font-size: 18px; color: #d1d5db; padding: 0 8px; }
+  .pipe-parallel { display: flex; flex-direction: column; gap: 6px; }
+
+  /* FOOTER */
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; font-size: 10px; color: #9ca3af; display: flex; justify-content: space-between; }
+
+  @media print {
+    body { font-size: 12px; }
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .stat-card, .pipe-stage { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="logo">OpenMRS QA Capstone · Quality Engineer Program</div>
+  <h1>Daily Progress Summary</h1>
+  <div class="sub">CI/CD Pipeline Setup · GitHub Actions Integration · UI Test Hardening</div>
+  <div class="meta">
+    <div class="meta-item"><div class="label">Date</div><div class="value">June 30, 2026</div></div>
+    <div class="meta-item"><div class="label">Team</div><div class="value">Sai Ram Burri &amp; Rohit Bharti</div></div>
+    <div class="meta-item"><div class="label">Repository</div><div class="value">rohitbharti6452/OMRS-Capstone</div></div>
+    <div class="meta-item"><div class="label">Branch</div><div class="value">main (19+ commits)</div></div>
+    <div class="meta-item"><div class="label">Pipeline Status</div><div class="value">✅ Passing</div></div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card"><div class="num">4</div><div class="label">Components Done</div></div>
+    <div class="stat-card"><div class="num">15/15</div><div class="label">Tests Passing</div></div>
+    <div class="stat-card"><div class="num">7</div><div class="label">Commits Today</div></div>
+    <div class="stat-card"><div class="num">4</div><div class="label">CI/CD Pipeline Stages</div></div>
+  </div>
+
+  <!-- WHAT WE PULLED IN -->
+  <div class="section">
+    <div class="section-title">Morning Pull — What Came In From Remote</div>
+    <p style="color:#4b5563;margin-bottom:12px;">Started the day with <code>git pull origin main</code> which fast-forwarded from <code>350c627</code> → <code>7a6cff1</code> (3 commits, PR #3 merged).</p>
+    <table>
+      <thead><tr><th>Commit</th><th>What Changed</th><th>Author</th></tr></thead>
+      <tbody>
+        <tr><td><code>7a6cff1</code></td><td>Merge PR #3 — Component 4 UI tests into main</td><td>Sairam7566</td></tr>
+        <tr><td><code>02cde61</code></td><td>README: CI badge, corrected AUT to o2.openmrs.org, Components 1–4 marked done</td><td>Rohit Bharti</td></tr>
+        <tr><td><code>06978f9</code></td><td>Page Object Model UI suite — 6/6 pass (LoginUITest, BasePage, LoginPage, RegisterPatientPage, SearchPatientPage, DriverFactory, screenshots)</td><td>Rohit Bharti</td></tr>
+      </tbody>
+    </table>
+    <p style="color:#4b5563;margin-top:10px;font-size:12px;">Two new remote branches also appeared: <code>feature/component-2-test-cases</code> and <code>feature/component-4-ui-tests</code>.</p>
+  </div>
+
+  <!-- RUBRIC STATUS -->
+  <div class="section">
+    <div class="section-title">Rubric Status — 10 Components (100 Points)</div>
+    <table>
+      <thead><tr><th>#</th><th>Component</th><th>Points</th><th>Status</th><th>Artifact</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Test Plan (Written Document)</td><td>10</td><td><span class="badge badge-green">Done</span></td><td><code>docs/Test_Plan.md</code></td></tr>
+        <tr><td>2</td><td>Test Cases (min 15)</td><td>15</td><td><span class="badge badge-green">Done</span></td><td><code>docs/Test_Cases.md</code> — 20 cases</td></tr>
+        <tr><td>3</td><td>Automated API Test Suite (min 8 tests)</td><td>15</td><td><span class="badge badge-green">Done — 9/9 pass</span></td><td><code>api/PatientApiTest.java</code></td></tr>
+        <tr><td>4</td><td>Automated UI Test Suite (min 5 tests)</td><td>15</td><td><span class="badge badge-green">Done — 6/6 pass</span></td><td><code>ui/LoginUITest.java</code></td></tr>
+        <tr><td>5</td><td>BDD Feature File (Cucumber)</td><td>10</td><td><span class="badge badge-yellow">TODO</span></td><td>—</td></tr>
+        <tr><td>6</td><td>Defect Reports (min 3)</td><td>10</td><td><span class="badge badge-yellow">TODO</span></td><td>Find Patient search bug flagged</td></tr>
+        <tr><td>7</td><td>Test Execution Summary</td><td>10</td><td><span class="badge badge-yellow">TODO</span></td><td>—</td></tr>
+        <tr><td>8</td><td>Load Test Results (JMeter)</td><td>5</td><td><span class="badge badge-yellow">TODO</span></td><td>—</td></tr>
+        <tr><td>9</td><td>Accessibility Testing Evidence</td><td>5</td><td><span class="badge badge-yellow">TODO</span></td><td>—</td></tr>
+        <tr><td>10</td><td>Presentation Slides (5–8 slides)</td><td>5</td><td><span class="badge badge-yellow">TODO</span></td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px;color:#4b5563;font-size:12px;"><strong>Points secured today: 55 / 100</strong> (Components 1–4 complete). Components 5–10 remaining = 45 points.</p>
+  </div>
+
+  <!-- CI/CD PIPELINE -->
+  <div class="section">
+    <div class="section-title">CI/CD Pipeline — Built From Scratch Today</div>
+    <p style="color:#4b5563;margin-bottom:14px;">Created <code>.github/workflows/ci.yml</code> with a 4-stage pipeline that runs on every push and PR to <code>main</code>.</p>
+
+    <div class="pipeline">
+      <div class="pipe-stage">
+        <div class="stage-name">Stage 1</div>
+        <div class="stage-desc" style="color:#065f46;font-weight:700;">Build ✅</div>
+        <div class="stage-desc">mvn compile test-compile</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-parallel">
+        <div class="pipe-stage">
+          <div class="stage-name">Stage 2</div>
+          <div class="stage-desc" style="color:#065f46;font-weight:700;">API Tests ✅</div>
+          <div class="stage-desc">9/9 PatientApiTest</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="stage-name">Stage 3</div>
+          <div class="stage-desc" style="color:#065f46;font-weight:700;">UI Tests ✅</div>
+          <div class="stage-desc">6/6 LoginUITest headless</div>
+        </div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage">
+        <div class="stage-name">Stage 4</div>
+        <div class="stage-desc" style="color:#065f46;font-weight:700;">Summary ✅</div>
+        <div class="stage-desc">Pass/fail table in workflow</div>
+      </div>
+    </div>
+
+    <table style="margin-top:14px;">
+      <thead><tr><th>Feature</th><th>Implementation</th></tr></thead>
+      <tbody>
+        <tr><td>Trigger</td><td>Push to <code>main</code>, PR to <code>main</code>, manual <code>workflow_dispatch</code></td></tr>
+        <tr><td>Java setup</td><td><code>actions/setup-java@v4</code> — Temurin JDK 21, Maven cache</td></tr>
+        <tr><td>API tests</td><td><code>mvn -B test -Dtest=PatientApiTest</code> — no browser required</td></tr>
+        <tr><td>UI tests</td><td><code>mvn -B test -Dtest=LoginUITest -Dheadless=true -Dexplicit.wait=30 -Dsurefire.rerunFailingTestsCount=2</code></td></tr>
+        <tr><td>Test reports</td><td><code>mikepenz/action-junit-report@v4</code> — inline PR annotations (requires <code>checks: write</code> permission)</td></tr>
+        <tr><td>Artifacts</td><td>Surefire XML reports + UI screenshots — retained 14 days</td></tr>
+        <tr><td>Pipeline summary</td><td>Pass/fail table written to GitHub Actions workflow summary page</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BUGS FIXED -->
+  <div class="section">
+    <div class="section-title">Bugs Found &amp; Fixed During CI/CD Setup</div>
+    <table>
+      <thead><tr><th>Commit</th><th>Bug</th><th>Root Cause</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>7097ac9</code></td>
+          <td>Chrome crashes immediately on Ubuntu runner</td>
+          <td><code>DriverFactory</code> missing <code>--no-sandbox</code> and <code>--disable-dev-shm-usage</code> — required in all containerised environments</td>
+          <td>Added both flags unconditionally to <code>createChromeDriver()</code></td>
+        </tr>
+        <tr>
+          <td><code>d646fb6</code></td>
+          <td>TC-UI-006 times out on <code>#next-button</code> (15 s)</td>
+          <td><code>RegisterPatientPage.navigateTo()</code> returned immediately after <code>driver.get()</code> — SPA hadn't rendered the form yet</td>
+          <td>Added <code>waitForVisible(GIVEN_NAME_FIELD)</code> as page-ready guard; bumped CI wait to 30 s</td>
+        </tr>
+        <tr>
+          <td><code>0cc038c</code></td>
+          <td>TC-UI-005 times out on <code>#patient-search-results</code> (30 s); TC-UI-006 still fails</td>
+          <td><code>searchFor()</code> assumed results container was pre-visible (recently viewed patients). Fresh CI session has no cookie history — container is hidden until a query is typed. Also: <code>browser-actions/setup-chrome</code> installed Chromium at non-standard path, breaking WebDriverManager version detection</td>
+          <td>Rewrote <code>searchFor()</code> to type first then wait; removed <code>browser-actions/setup-chrome</code> (ubuntu-latest has Chrome pre-installed); added <code>-Dsurefire.rerunFailingTestsCount=2</code> for live-server flakiness</td>
+        </tr>
+        <tr>
+          <td><code>e08be4e</code></td>
+          <td><code>mikepenz/action-junit-report</code> fails with "Resource not accessible by integration"</td>
+          <td>Default GITHUB_TOKEN only has <code>contents: read</code>; creating check-run annotations requires <code>checks: write</code></td>
+          <td>Added <code>permissions: checks: write</code> at workflow level</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JIRA WORKFLOW -->
+  <div class="section">
+    <div class="section-title">Jira Workflow Integration</div>
+    <p style="color:#4b5563;margin-bottom:12px;">Created <code>docs/Jira_Workflow.md</code> — convention doc for traceability from Jira issues to GitHub commits/PRs.</p>
+    <table>
+      <thead><tr><th>Convention</th><th>Format</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Branch naming</td><td><code>feature/KEY-N-short-desc</code></td><td><code>feature/CAPS-12-add-login-ui-tests</code></td></tr>
+        <tr><td>Commit subject</td><td>Include issue key in subject</td><td><code>[Component4] CAPS-12 Add Page Object Model UI suite</code></td></tr>
+        <tr><td>Smart commits</td><td><code>KEY-N #done</code> or <code>#comment text</code></td><td><code>CAPS-12 #done Page Object Model merged</code></td></tr>
+        <tr><td>PR title</td><td>Include issue key in PR title</td><td><code>[Component4] CAPS-12 Add Page Object Model UI suite</code></td></tr>
+        <tr><td>Integration</td><td>GitHub for Jira app (Atlassian official)</td><td>Apps → Explore → "GitHub for Jira" → connect repo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TODAY'S COMMITS -->
+  <div class="section">
+    <div class="section-title">All Commits Pushed Today — June 30, 2026</div>
+    <table>
+      <thead><tr><th>SHA</th><th>Message</th><th>Files Changed</th></tr></thead>
+      <tbody>
+        <tr><td><code>5a6e1b1</code></td><td>[CI/CD] Add GitHub Actions pipeline and Jira workflow docs</td><td><code>.github/workflows/ci.yml</code>, <code>docs/Jira_Workflow.md</code>, <code>README.md</code></td></tr>
+        <tr><td><code>7097ac9</code></td><td>[Fix] Add --no-sandbox and --disable-dev-shm-usage for CI Chrome</td><td><code>utils/DriverFactory.java</code></td></tr>
+        <tr><td><code>d646fb6</code></td><td>[Fix] Harden TC-UI-006 against slow CI page load</td><td><code>pages/RegisterPatientPage.java</code>, <code>ci.yml</code></td></tr>
+        <tr><td><code>0cc038c</code></td><td>[Fix] Fix TC-UI-005 fresh-session bug and add CI retry</td><td><code>pages/SearchPatientPage.java</code>, <code>ci.yml</code></td></tr>
+        <tr><td><code>e08be4e</code></td><td>[CI] Add checks:write permission for JUnit report annotations</td><td><code>ci.yml</code></td></tr>
+        <tr><td><em>history rewrite</em></td><td>Remove Co-Authored-By trailers from all 20 commits across all branches (force pushed)</td><td>All branches rewritten — contributors: Sairam7566, Smarty6452 only</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HOW TO RUN -->
+  <div class="section">
+    <div class="section-title">How to Run Tests Manually</div>
+    <pre><span class="comment"># 1. Navigate to the Maven project</span>
+cd /path/to/OMRS-Capstone/openmrs-qa-automation
+
+<span class="comment"># 2. Run all tests</span>
+mvn clean test
+
+<span class="comment"># 3. API tests only (no browser)</span>
+mvn test -Dtest=PatientApiTest
+
+<span class="comment"># 4. UI tests — visible browser (watch it run)</span>
+mvn test -Dtest=LoginUITest -Dheadless=false
+
+<span class="comment"># 5. UI tests — headless (CI-style)</span>
+mvn test -Dtest=LoginUITest -Dheadless=true
+
+<span class="comment"># 6. BDD scenarios (once Component 5 is built)</span>
+mvn test -Dtest=RunCucumberTest</pre>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="section">
+    <div class="section-title">Next Steps — Components 5–10 (45 Points Remaining)</div>
+    <ul class="checklist">
+      <li><span class="check check-todo">5</span><div><strong>Component 5 — BDD Feature File (10 pts)</strong><br/><span style="color:#6b7280;font-size:12px;">Write <code>patient_management.feature</code> in Gherkin, create <code>RunCucumberTest</code>, add step definitions in <code>bdd/steps/</code></span></div></li>
+      <li><span class="check check-todo">6</span><div><strong>Component 6 — Defect Reports (10 pts)</strong><br/><span style="color:#6b7280;font-size:12px;">Write ≥3 formal defect reports — Find Patient search box already flagged as a known defect (doesn't filter results on live server)</span></div></li>
+      <li><span class="check check-todo">7</span><div><strong>Component 7 — Test Execution Summary (10 pts)</strong><br/><span style="color:#6b7280;font-size:12px;">Fill in <code>docs/test_execution_summary.txt</code> with real pass/fail numbers from CI run screenshots</span></div></li>
+      <li><span class="check check-todo">8</span><div><strong>Component 8 — Load Test Results / JMeter (5 pts)</strong><br/><span style="color:#6b7280;font-size:12px;">Run <code>load-test/OpenMRS_LoadTest.jmx</code> in JMeter against o2.openmrs.org, export HTML report</span></div></li>
+      <li><span class="check check-todo">9</span><div><strong>Component 9 — Accessibility Testing Evidence (5 pts)</strong><br/><span style="color:#6b7280;font-size:12px;">Document 5 keyboard interactions + contrast notes in <code>docs/accessibility_findings.txt</code></span></div></li>
+      <li><span class="check check-todo">10</span><div><strong>Component 10 — Presentation Slides (5 pts)</strong><br/><span style="color:#6b7280;font-size:12px;">5–8 slides covering AUT, tools, test types, results, and defects. Export as <code>docs/presentation.pdf</code></span></div></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>OpenMRS QA Automation Capstone · Quality Engineer Program · 2026</span>
+    <span>Generated June 30, 2026 · github.com/rohitbharti6452/OMRS-Capstone</span>
+  </div>
+</div>
+</body>
+</html>
