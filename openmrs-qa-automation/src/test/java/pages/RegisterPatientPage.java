@@ -36,6 +36,7 @@ public class RegisterPatientPage extends BasePage {
     public RegisterPatientPage navigateTo() {
         driver.get(ConfigLoader.getUiBaseUrl()
                 + "/registrationapp/registerPatient.page?appId=registrationapp.basicRegisterPatient");
+        waitForVisible(GIVEN_NAME_FIELD); // SPA needs time to render; don't proceed until form is ready
         return this;
     }
 

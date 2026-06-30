@@ -92,7 +92,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Run UI test suite (LoginUITest — headless)
-        run: mvn -B test -Dtest=LoginUITest -Dheadless=true
+        run: mvn -B test -Dtest=LoginUITest -Dheadless=true -Dexplicit.wait=30
 
       - name: Publish UI test results
         if: always()
