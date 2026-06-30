@@ -1,8 +1,10 @@
 # OpenMRS QA Automation — Cross-Platform QA Showcase
 
+[![OMRS QA Automation CI](https://github.com/rohitbharti6452/OMRS-Capstone/actions/workflows/ci.yml/badge.svg)](https://github.com/rohitbharti6452/OMRS-Capstone/actions/workflows/ci.yml)
+
 **Course:** Quality Engineer (AI & Test Automation)  
 **Capstone:** Week 6 Day 5 — Cross-Platform QA Showcase  
-**Application Under Test:** OpenMRS Reference Application Demo — https://demo.openmrs.org  
+**Application Under Test:** OpenMRS 2.x Reference Application (O2) — https://o2.openmrs.org  
 **Stack:** Java 21 · Maven · JUnit 5 · Selenium WebDriver · REST Assured · Cucumber · JMeter
 
 **Team:**
@@ -27,9 +29,9 @@ This capstone demonstrates end-to-end QA automation against a real, production-g
 | # | Component | Points | Status |
 |---|-----------|--------|--------|
 | 1 | Test Plan (Written Document) | 10 | ✅ |
-| 2 | Test Cases (Written Document, min 15) | 15 | ⬜ |
-| 3 | Automated API Test Suite (min 8 tests) | 15 | ⬜ |
-| 4 | Automated UI Test Suite (min 5 tests) | 15 | ⬜ |
+| 2 | Test Cases (Written Document, min 15) | 15 | ✅ |
+| 3 | Automated API Test Suite (min 8 tests) | 15 | ✅ |
+| 4 | Automated UI Test Suite (min 5 tests) | 15 | ✅ |
 | 5 | BDD Feature File (Cucumber) | 10 | ⬜ |
 | 6 | Defect Reports (min 3) | 10 | ⬜ |
 | 7 | Test Execution Summary | 10 | ⬜ |
@@ -125,10 +127,10 @@ mvn test -Dtest=RunCucumberTest
 
 | Property | Value |
 |----------|-------|
-| URL | https://demo.openmrs.org |
+| URL | https://o2.openmrs.org |
 | Username | admin |
 | Password | Admin123 |
-| API Base URL | https://demo.openmrs.org/openmrs/ws/rest/v1 |
+| API Base URL | https://o2.openmrs.org/openmrs/ws/rest/v1 |
 | Auth | HTTP Basic Auth (Base64 encoded) |
 
 > **Note:** The demo server resets periodically (~24 hours). Tests use Faker-generated data to avoid collisions.
