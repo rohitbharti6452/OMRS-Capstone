@@ -7,6 +7,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  checks: write
+
 env:
   JAVA_VERSION: '21'
   WORKING_DIR: openmrs-qa-automation
