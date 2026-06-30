@@ -1,0 +1,135 @@
+name: OMRS QA Automation CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  JAVA_VERSION: '21'
+  WORKING_DIR: openmrs-qa-automation
+
+jobs:
+
+  # ── Stage 1: Compile ────────────────────────────────────────────────────────
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIR }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: maven
+
+      - name: Compile
+        run: mvn -B clean compile test-compile -q
+
+  # ── Stage 2: API Tests ──────────────────────────────────────────────────────
+  api-tests:
+    name: API Tests
+    needs: build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIR }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: maven
+
+      - name: Run API test suite (PatientApiTest)
+        run: mvn -B test -Dtest=PatientApiTest
+
+      - name: Publish API test results
+        if: always()
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: ${{ env.WORKING_DIR }}/target/surefire-reports/TEST-*.xml
+          check_name: API Test Results
+          fail_on_failure: true
+
+      - name: Upload surefire reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-surefire-reports
+          path: ${{ env.WORKING_DIR }}/target/surefire-reports/
+          retention-days: 14
+
+  # ── Stage 3: UI Tests (headless Chrome) ────────────────────────────────────
+  ui-tests:
+    name: UI Tests
+    needs: build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIR }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: maven
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run UI test suite (LoginUITest — headless)
+        run: mvn -B test -Dtest=LoginUITest -Dheadless=true
+
+      - name: Publish UI test results
+        if: always()
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: ${{ env.WORKING_DIR }}/target/surefire-reports/TEST-*.xml
+          check_name: UI Test Results
+          fail_on_failure: true
+
+      - name: Upload UI surefire reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-surefire-reports
+          path: ${{ env.WORKING_DIR }}/target/surefire-reports/
+          retention-days: 14
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-screenshots
+          path: ${{ env.WORKING_DIR }}/screenshots/
+          retention-days: 14
+
+  # ── Stage 4: Pipeline Summary ───────────────────────────────────────────────
+  summary:
+    name: Pipeline Summary
+    needs: [api-tests, ui-tests]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Report status
+        run: |
+          echo "## Pipeline Result" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Stage | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| API Tests  | ${{ needs.api-tests.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| UI Tests   | ${{ needs.ui-tests.result }} |" >> $GITHUB_STEP_SUMMARY

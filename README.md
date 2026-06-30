@@ -123,6 +123,16 @@ mvn test -Dtest=RunCucumberTest
 
 ---
 
+## CI/CD
+
+GitHub Actions runs the API test suite on every push/PR to `main` ([.github/workflows/ci.yml](.github/workflows/ci.yml)). It checks out the repo, sets up JDK 21, runs `mvn -B clean test -Dtest=PatientApiTest`, and uploads the Surefire reports as a build artifact. UI tests are run manually for now (see Quick Start above) since headless Selenium against a shared live demo server is more failure-prone in CI.
+
+## Jira Workflow
+
+Branches, commits, and PRs reference Jira issue keys (e.g. `CAPS-12`) so work is traceable from issue → commit → CI run. See [docs/Jira_Workflow.md](docs/Jira_Workflow.md) for branch naming, commit conventions, and smart-commit syntax.
+
+---
+
 ## Application Under Test
 
 | Property | Value |
