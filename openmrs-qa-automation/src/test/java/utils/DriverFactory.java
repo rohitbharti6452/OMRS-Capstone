@@ -30,7 +30,13 @@ public class DriverFactory {
         if (headless) {
             options.addArguments("--headless=new", "--window-size=1920,1080");
         }
-        options.addArguments("--disable-notifications", "--remote-allow-origins=*");
+        // Required for CI/containerized environments (GitHub Actions, Docker, etc.)
+        options.addArguments(
+            "--no-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-notifications",
+            "--remote-allow-origins=*"
+        );
         return new ChromeDriver(options);
     }
 
