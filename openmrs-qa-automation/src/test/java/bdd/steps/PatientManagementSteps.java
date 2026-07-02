@@ -62,6 +62,7 @@ public class PatientManagementSteps {
 
     @Then("I should be on the dashboard")
     public void iShouldBeOnTheDashboard() {
+        loginPage.waitForDashboard();
         assertTrue(driver.getCurrentUrl().contains("home.page"),
                 "Expected URL to contain 'home.page', was: " + driver.getCurrentUrl());
     }
@@ -75,6 +76,7 @@ public class PatientManagementSteps {
     @Then("the login outcome should be {string}")
     public void theLoginOutcomeShouldBe(String outcome) {
         if ("success".equals(outcome)) {
+            loginPage.waitForDashboard();
             assertTrue(driver.getCurrentUrl().contains("home.page"),
                     "Expected successful login, landed on: " + driver.getCurrentUrl());
         } else {

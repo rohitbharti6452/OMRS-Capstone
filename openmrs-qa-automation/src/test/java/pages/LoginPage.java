@@ -56,13 +56,19 @@ public class LoginPage extends BasePage {
         waitForClickable(LOGIN_BUTTON).click();
     }
 
-    /** Full login flow: username, password, required session location, submit. */
+    /** Waits until the post-login redirect lands on the dashboard. */
+    public void waitForDashboard() {
+        waitForUrlContains("home.page");
+    }
+
+    /** Full login flow: username, password, required session location, submit, wait for dashboard. */
     public void login(String username, String password) {
         navigateTo();
         enterUsername(username);
         enterPassword(password);
         selectOutpatientClinicLocation();
         clickLogin();
+        waitForDashboard();
     }
 
     public String getErrorMessageText() {
