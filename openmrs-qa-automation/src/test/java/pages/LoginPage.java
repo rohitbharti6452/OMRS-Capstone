@@ -61,14 +61,13 @@ public class LoginPage extends BasePage {
         waitForUrlContains("home.page");
     }
 
-    /** Full login flow: username, password, required session location, submit, wait for dashboard. */
+    /** Full login flow: username, password, required session location, submit. */
     public void login(String username, String password) {
         navigateTo();
         enterUsername(username);
         enterPassword(password);
         selectOutpatientClinicLocation();
         clickLogin();
-        waitForDashboard();
     }
 
     public String getErrorMessageText() {

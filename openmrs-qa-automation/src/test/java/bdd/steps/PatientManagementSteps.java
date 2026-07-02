@@ -90,6 +90,7 @@ public class PatientManagementSteps {
     @Given("I am logged in as {string} with password {string}")
     public void iAmLoggedInAs(String username, String password) {
         loginPage.login(username, password);
+        loginPage.waitForDashboard();
     }
 
     @When("I navigate to the patient registration page")
